@@ -1,0 +1,251 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Poppins;
+    box-sizing: border-box;
+}
+
+body { 
+    overflow-x: hidden;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+#home {
+    width: 100%;
+    min-height: 100vh;
+    background: #111;
+    transition: 0.5s;
+}
+/* Header */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-menu {
+    position: relative;
+    padding: 40px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+.logo {
+    color: #fff;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.menu-toggle {
+    width: 60px;
+    height: 60px;
+    background: url(../assets/menu.png) no-repeat;
+    background-size: 30px;
+    background-position: center;
+    cursor: pointer;
+}
+
+.nav-list {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 40%;
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background: #fff;
+    z-index: 2000;
+    animation: animeNavList .7s forwards;
+}
+
+.nav-list li:hover {
+    border-bottom: 1px solid #111;
+}
+
+.nav-list a{
+    text-align: center;
+    font-size: 1.2em;
+    color: #111;
+    padding: 10px 30px;
+    text-transform: uppercase;
+}
+
+@keyframes animeNavList {
+    from {
+        opacity: 0;
+        transform: translate3d(30px, 0, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.nav-list.ativo {
+    display: flex;
+}
+
+.btn-fecharNav {
+    position: absolute;
+    top: 30px;
+    right: 70px;
+    font-size: 2em;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+
+.textBox {
+    position: relative;
+    z-index: 999;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.textBox h2{
+    font-size: 6em;
+    font-weight: 800;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.textBox h3{
+    font-size: 4em;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.textBox p{
+    font-size: 1.2em;
+    font-weight: 400;
+    color: #fff;
+    margin: 20px 0;
+    max-width: 700px;
+}
+
+.textBox .btn-join {
+    display: inline-block;
+    max-width: 250px;
+    text-align: center;
+    font-size: 1.2em;
+    color: #111;
+    background: #fff;
+    padding: 10px 30px;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+/* Social Media */
+.p-relative {
+    position: relative;
+}
+
+.social-media {
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    display: flex;
+    filter: invert(100%);
+    z-index: 10;
+}
+
+.social-media li {
+    margin-right: 20px;
+}
+
+/* Video */
+.video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Overlay, irá colorir o BG(Video) com um degradê */
+/* A propriedade mix-blend-mode descreve como um elemento de conteúdo deve ser mesclado com os elementos abaixo dele no background. */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to left, #00f, #f00);
+    mix-blend-mode: overlay;
+}
+
+/* Media Queries */
+@media (max-width: 1399px) {
+    .container {
+        max-width: 999px;
+    }
+}
+
+@media (max-width: 1149px) {
+    .container {
+        max-width: 700px;
+    }
+}
+
+@media (max-width: 800px) {
+    body {
+        overflow-y: hidden ;
+    }
+
+    .container{
+        max-width: 499px;
+    }
+
+    .textBox h2{
+        font-size: 4.4em;
+    }
+
+    .textBox h3 {
+        font-size: 2.4em;
+    }
+
+    .textBox p {
+        font-size: 1em;
+    }
+
+    .p-relative {
+        position:unset;
+    }
+
+    .social-media {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        filter: invert(100%);
+        z-index: 10;
+    }
+
+    .social-media li{
+        margin: 10px 0;
+        transform: translateY(-50%);
+        cursor: pointer;
+    }
+
+    .nav-list.ativo {
+        width: 100%;
+    }
+}
